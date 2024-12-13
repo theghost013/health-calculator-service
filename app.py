@@ -8,6 +8,13 @@ dotenv.load_dotenv()
 app = Flask(__name__)
 
 
+@app.route("/", methods=["GET"])
+def index():
+    return (
+        "Welcome to the Health Calculator Service\nLes routes qui existent:\n/bmi\n/bmr"
+    )
+
+
 @app.route("/bmi", methods=["POST"])
 def bmi():
     return jsonify(bmi=calculate_bmi(request.json["weight"], request.json["height"]))

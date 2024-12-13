@@ -15,14 +15,52 @@
 git clone https://github.com/L1-Dev/health-calculator-service.git
 ```
 
-2. Build the Docker image:
+2. Environment variables:
+
+Copy the `.env.example` file to `.env` and update the values with your own.
 
 ```bash
-docker build -t health-calculator-service .
+cp .env.example .env
 ```
 
-3. Run the Docker container:
+3. Change environment variables in makefile with your own.
+
+### Running the application locally
+
+1. Install dependencies:
 
 ```bash
-docker run -p 3000:3000 health-calculator-service
+make init
+```
+
+2. Test the application:
+
+```bash
+make test
+```
+
+3. Run the application:
+
+```bash
+make run
+```
+
+4. Test the API:
+
+```bash
+make test-api
+```
+
+### Running the application in a container
+
+1. Build the docker image:
+
+```bash
+make build
+```
+
+2. Run the container:
+
+```bash
+make run-container
 ```

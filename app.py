@@ -1,5 +1,9 @@
 from flask import Flask, request, jsonify
 from health_utils import calculate_bmi, calculate_bmr
+import dotenv
+import os
+
+dotenv.load_dotenv()
 
 app = Flask(__name__)
 
@@ -27,4 +31,4 @@ def test():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host=os.getenv("APP_HOST"), port=os.getenv("APP_PORT"))

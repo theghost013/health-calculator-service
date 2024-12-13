@@ -6,20 +6,26 @@ init:
 	@. venv/bin/activate
 	@pip install -r requirements.txt
 
+ci-init:
+	@pip install -r requirements.txt
+
 run:
 	@. venv/bin/activate
 	@exec python3 app.py
 
-build:
-	@docker build -t health-calculator-service .
-
 test:
+	@. venv/bin/activate
 	@exec python3 -m unittest test.py
 
+build:
+	@docker build -t ${IMAGE_NAME} .
+
+
 test-api:
-	@curl -X GET http://localhost:${APP_PORT}/test
+	@curl -X GET http://${APP_HOST}:${APP_PORT}/test
+
 run-container:
-	@docker run --env-file .env -p ${APP_PORT}:${APP_PORT} health-calculator-service
+	@docker run --env-file .env -p ${APP_PORT}:${APP_PORT} ${IMAGE_NAME}
 
 help:
 	@echo "make init - create virtual environment"

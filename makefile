@@ -6,9 +6,6 @@ init:
 	@. venv/bin/activate
 	@pip install -r requirements.txt
 
-ci-init:
-	@pip install -r requirements.txt
-
 run:
 	@. venv/bin/activate
 	@exec python3 app.py

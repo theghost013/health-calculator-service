@@ -8,8 +8,6 @@ init:
 	@. venv/bin/activate
 	@pip install -r requirements.txt
 
-init-ci:
-	@pip install -r requirements.txt
 
 run:
 	@. venv/bin/activate
@@ -28,6 +26,12 @@ test-api:
 
 run-container:
 	@docker run --env-file .env -p ${APP_PORT}:${APP_PORT} ${IMAGE_NAME}
+
+init-ci:
+	@pip install -r requirements.txt
+
+test-ci:
+	@python -m unittest test.py
 
 help:
 	@echo "make init - create virtual environment"

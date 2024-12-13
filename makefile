@@ -1,5 +1,7 @@
 SHELL := /bin/bash
-include .env
+IMAGE_NAME := health-calculator-service
+APP_HOST := localhost
+APP_PORT := 5000
 
 init:
 	@python3 -m venv venv

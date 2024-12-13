@@ -11,6 +11,6 @@ RUN pip install -r requirements.txt
 
 RUN python -m unittest test.py
 
-EXPOSE 3000
+EXPOSE ${APP_PORT}
 
 CMD ["python", "app.py"]

@@ -10,9 +10,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
-    return (
-        "Welcome to the Health Calculator Service\nLes routes qui existent:\n/bmi\n/bmr"
-    )
+    return "Welcome to the Health Calculator Service\nAll endpoints are available : /bmi, /bmr, /test"
 
 
 @app.route("/bmi", methods=["POST"])

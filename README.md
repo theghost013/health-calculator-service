@@ -1,5 +1,11 @@
 # health-calculator-service
 
+A simple Flask application that calculates BMI and BMR.
+
+## Domain
+
+This application is accessible at `https://health-app-cddfbebjheergufc.francecentral-01.azurewebsites.net/`.
+
 ## Getting Started
 
 ### Prerequisites
